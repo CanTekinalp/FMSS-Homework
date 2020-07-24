@@ -22,6 +22,8 @@
 		0423CD7B24C9D3AB002477B9 /* SortOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0423CD7A24C9D3AB002477B9 /* SortOrderView.swift */; };
 		0423CD7D24C9D3C8002477B9 /* SortOrderViewCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0423CD7C24C9D3C8002477B9 /* SortOrderViewCollectionCell.swift */; };
 		0427AF1124CACA8F007E2413 /* Array+PackageViewModelSorting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0427AF1024CACA8F007E2413 /* Array+PackageViewModelSorting.swift */; };
+		0427AF1424CACB8B007E2413 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0427AF1324CACB8B007E2413 /* SearchView.swift */; };
+		0427AF1624CAD697007E2413 /* UISearchBar+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0427AF1524CAD697007E2413 /* UISearchBar+Extension.swift */; };
 		045DF02824C97EBD00646FB3 /* TariffViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045DF02724C97EBD00646FB3 /* TariffViewModel.swift */; };
 		045DF02A24C9A6FA00646FB3 /* SubscriptionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045DF02924C9A6FA00646FB3 /* SubscriptionType.swift */; };
 		045DF02C24C9A71900646FB3 /* PackageBenefits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045DF02B24C9A71900646FB3 /* PackageBenefits.swift */; };
@@ -78,6 +80,8 @@
 		0423CD7A24C9D3AB002477B9 /* SortOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortOrderView.swift; sourceTree = "<group>"; };
 		0423CD7C24C9D3C8002477B9 /* SortOrderViewCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortOrderViewCollectionCell.swift; sourceTree = "<group>"; };
 		0427AF1024CACA8F007E2413 /* Array+PackageViewModelSorting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+PackageViewModelSorting.swift"; sourceTree = "<group>"; };
+		0427AF1324CACB8B007E2413 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		0427AF1524CAD697007E2413 /* UISearchBar+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISearchBar+Extension.swift"; sourceTree = "<group>"; };
 		045DF02724C97EBD00646FB3 /* TariffViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TariffViewModel.swift; sourceTree = "<group>"; };
 		045DF02924C9A6FA00646FB3 /* SubscriptionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionType.swift; sourceTree = "<group>"; };
 		045DF02B24C9A71900646FB3 /* PackageBenefits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageBenefits.swift; sourceTree = "<group>"; };
@@ -207,6 +211,14 @@
 			path = SortOrder;
 			sourceTree = "<group>";
 		};
+		0427AF1224CACB64007E2413 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				0427AF1324CACB8B007E2413 /* SearchView.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		0472F4A524C6F4D10075C9FD = {
 			isa = PBXGroup;
 			children = (
@@ -291,6 +303,7 @@
 				0423CD7924C9D395002477B9 /* SortOrder */,
 				041EE87424C8DDC500AAB508 /* Tariff */,
 				041EE87124C8D18D00AAB508 /* Subscription */,
+				0427AF1224CACB64007E2413 /* Search */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -311,6 +324,7 @@
 				0472F4F924C760EA0075C9FD /* UIColor+Extension.swift */,
 				041EE86A24C8B52800AAB508 /* UserDefaults+Extension.swift */,
 				0427AF1024CACA8F007E2413 /* Array+PackageViewModelSorting.swift */,
+				0427AF1524CAD697007E2413 /* UISearchBar+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -479,6 +493,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0427AF1624CAD697007E2413 /* UISearchBar+Extension.swift in Sources */,
 				0423CD7524C9D1BA002477B9 /* TariffListViewModel.swift in Sources */,
 				0472F4EB24C6FD670075C9FD /* PackageTableViewCell.swift in Sources */,
 				041EE86F24C8D16200AAB508 /* SubscriptionFilterViewCollectionCell.swift in Sources */,
@@ -507,6 +522,7 @@
 				041EE87824C8DE7300AAB508 /* TariffSortViewCollectionCell.swift in Sources */,
 				0423CD7724C9D218002477B9 /* SubscriptionListViewModel.swift in Sources */,
 				0472F4F824C7426C0075C9FD /* HomeViewController.swift in Sources */,
+				0427AF1424CACB8B007E2413 /* SearchView.swift in Sources */,
 				0472F4B224C6F4D20075C9FD /* AppDelegate.swift in Sources */,
 				0472F4F624C727CA0075C9FD /* HomePageView.swift in Sources */,
 				0472F4EF24C700FD0075C9FD /* PackageListViewModel.swift in Sources */,

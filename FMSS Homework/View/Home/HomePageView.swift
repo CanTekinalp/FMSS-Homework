@@ -22,6 +22,12 @@ final class HomePageView: UIView {
     private var selectedSortOption: TariffSortOption = .price
     private var selectedFilterOption: SubscriptionFilterOption = .all
     
+    lazy var searchView: SearchView = {
+        let searchView = SearchView()
+        searchView.delegate = self
+        return searchView
+    }()
+    
     lazy var sortOrderView: SortOrderView = {
         let sortOrderView = SortOrderView()
         sortOrderView.sortOrderListViewModel = SortOrderListViewModel(selectedSortOrder)
@@ -85,6 +91,7 @@ extension HomePageView {
     }
     
     private func setupSubviews() {
+        addSubview(searchView)
         addSubview(sortOrderView)
         addSubview(tariffSortView)
         addSubview(subscriptionTypeFilterView)
@@ -92,9 +99,16 @@ extension HomePageView {
     }
     
     private func setupConstraints() {
-        let sectionHeight: CGFloat = 80
+        searchView.anchor(top: safeAreaLayoutGuide.topAnchor,
+                             leading: leadingAnchor,
+                             bottom: nil,
+                             trailing: trailingAnchor,
+                             paddingTop: 15, paddingleft: 0, paddingBottom: 0, paddingRight: 0,
+                             width: 0, height: 50, centerX: nil, centerY: nil)
         
-        sortOrderView.anchor(top: safeAreaLayoutGuide.topAnchor,
+        let sectionHeight: CGFloat = 80
+
+        sortOrderView.anchor(top: searchView.bottomAnchor,
                              leading: leadingAnchor,
                              bottom: nil,
                              trailing: trailingAnchor,
@@ -143,6 +157,13 @@ extension HomePageView: UITableViewDataSource {
     }
 }
 
+extension HomePageView: SearchViewDelegate {
+
+    func searchView(textDidChange searchText: String) {
+        print(searchText)
+    }
+}
+
 extension HomePageView: SortOrderViewDelegate {
     
     func didSelect(_ sortOrder: SortOrder) {
@@ -175,5 +196,3 @@ extension HomePageView: PackageTableViewCellDelegate {
         resultArray = packageListViewModel?.packageViewModels?.sortBy(sortOption: selectedSortOption, sortOrder: selectedSortOrder, filterOption: selectedFilterOption)
     }
 }
-
-
