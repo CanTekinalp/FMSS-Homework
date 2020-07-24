@@ -317,8 +317,8 @@
 		0472F4E224C6F7500075C9FD /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				0427AF1C24CAEBE8007E2413 /* SortFilter */,
 				0423CD7824C9D26E002477B9 /* Home */,
+				0427AF1C24CAEBE8007E2413 /* SortFilter */,
 				0423CD6F24C9D154002477B9 /* Subscription */,
 				0423CD6E24C9D14D002477B9 /* Tariff */,
 				0423CD6D24C9D142002477B9 /* SortOrder */,

@@ -6,7 +6,7 @@
 //  Copyright © 2020 Can Tekinalp. All rights reserved.
 //
 
-import FittedSheets
+import UIKit
 
 protocol SortFilterOptionsViewControllerDelegate: NSObjectProtocol {
     func didClickApplyFilterButton()

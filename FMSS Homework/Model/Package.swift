@@ -6,8 +6,6 @@
 //  Copyright © 2020 Can Tekinalp. All rights reserved.
 //
 
-import UIKit
-
 struct Packages: Decodable {
     let packages: [Package]
 }
