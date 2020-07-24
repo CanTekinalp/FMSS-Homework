@@ -8,14 +8,14 @@
 
 import UIKit
 
-protocol SearchViewDelegate: NSObjectProtocol {
+protocol SearchBarViewDelegate: NSObjectProtocol {
     func searchView(textDidChange searchText: String)
     func searchTextFieldCleared()
 }
 
-final class SearchView: UIView {
+final class SearchBarView: UIView {
             
-    weak var delegate: SearchViewDelegate?
+    weak var delegate: SearchBarViewDelegate?
         
     private var prevText: String = ""
     private let searchElementThreshold: Int = 2
@@ -43,7 +43,7 @@ final class SearchView: UIView {
     }
 }
 
-extension SearchView {
+extension SearchBarView {
     
     private func setup() {
         setupSubviews()
@@ -65,7 +65,7 @@ extension SearchView {
     }
 }
 
-extension SearchView: UISearchBarDelegate {
+extension SearchBarView: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if (prevText.count >  searchElementThreshold && searchText.isEmpty) ||

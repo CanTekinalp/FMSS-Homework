@@ -22,7 +22,7 @@ final class TariffListViewModel {
         tariffViewModels?.count ?? 0
     }
     
-    init(_ selectedSortOption: TariffSortOption, _ selectedSortOrder: SortOrder) {
+    init(_ selectedSortOption: TariffSortOption) {
         tariffViewModels = sortOptions.map {
             let viewModel = TariffViewModel(sortOption: $0)
             if $0 == selectedSortOption {

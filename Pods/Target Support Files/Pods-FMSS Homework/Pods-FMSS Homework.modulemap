@@ -1,0 +1,6 @@
+module Pods_FMSS_Homework {
+  umbrella header "Pods-FMSS Homework-umbrella.h"
+
+  export *
+  module * { export * }
+}

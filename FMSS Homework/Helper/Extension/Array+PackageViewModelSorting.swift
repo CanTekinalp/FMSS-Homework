@@ -56,14 +56,16 @@ extension Array where Element == PackageViewModel {
         if searchText.isEmpty || searchText.count < 3 {
             return self
         }
-        return filter { $0.package.name.contains(searchText) }
+        return filter { $0.package.name.uppercased().contains(searchText.uppercased()) }
     }
 
-    func sortBy(sortOption: TariffSortOption, sortOrder: SortOrder, subscriptionFilterOption: SubscriptionFilterOption = .all, searchText: String = "") -> Self? {
-        let filteredBySubscription = filterBy(subscriptionFilterOption: subscriptionFilterOption)
+    func sortBy(sortFilterOptions: SortFilterOptions, searchText: String = "") -> Self?
+    {
+        let filteredBySubscription = filterBy(subscriptionFilterOption: sortFilterOptions.subscriptionFilterOption)
         let filteredBySearchText = filteredBySubscription?.filterBy(searchText: searchText)
 
-        switch sortOption {
+        let sortOrder = sortFilterOptions.sortOrder
+        switch sortFilterOptions.tariffSortOption {
         case .price:
             return filteredBySearchText?.sortByPrice(sortOrder: sortOrder)
         case .data:

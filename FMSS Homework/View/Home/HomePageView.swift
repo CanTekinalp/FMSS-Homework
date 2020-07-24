@@ -8,49 +8,37 @@
 
 import UIKit
 
+protocol HomePageViewDelegate: NSObjectProtocol {
+    func didClickSortFilterOptionsButton()
+}
+
 final class HomePageView: UIView {
     
+    weak var delegate: HomePageViewDelegate?
+
     private var packageListViewModel: PackageListViewModel?
-    
+    private var sortFilterOptions: SortFilterOptions
+
     private var resultArray: [PackageViewModel]? {
         didSet {
             tableView.reloadData()
         }
     }
     
-    private var selectedSortOrder: SortOrder = .descending
-    private var selectedSortOption: TariffSortOption = .price
-    private var selectedFilterOption: SubscriptionFilterOption = .all
     private var searchText: String = ""
     
-    lazy var searchView: SearchView = {
-        let searchView = SearchView()
+    lazy var searchView: SearchBarView = {
+        let searchView = SearchBarView()
         searchView.delegate = self
         return searchView
     }()
     
-    lazy var sortOrderView: SortOrderView = {
-        let sortOrderView = SortOrderView()
-        sortOrderView.sortOrderListViewModel = SortOrderListViewModel(selectedSortOrder)
-        sortOrderView.delegate = self
-        sortOrderView.backgroundColor = .doctor
-        return sortOrderView
-    }()
-    
-    lazy var tariffSortView: TariffSortView = {
-        let tariffSortView = TariffSortView()
-        tariffSortView.tariffListViewModel = TariffListViewModel(selectedSortOption, selectedSortOrder)
-        tariffSortView.delegate = self
-        tariffSortView.backgroundColor = .doctor
-        return tariffSortView
-    }()
-    
-    lazy var subscriptionTypeFilterView: SubscriptionFilterView = {
-        let subscriptionTypeFilterView = SubscriptionFilterView()
-        subscriptionTypeFilterView.subscriptionTypeListViewModel = SubscriptionTypeListViewModel(selectedFilterOption)
-        subscriptionTypeFilterView.delegate = self
-        subscriptionTypeFilterView.backgroundColor = .doctor
-        return subscriptionTypeFilterView
+    lazy var sortFilterButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "filterIcon"), for: .normal)
+        button.addTarget(self, action: #selector(handleSortFilterButton), for: .touchUpInside)
+        button.backgroundColor = .clear
+        return button
     }()
     
     lazy var tableView : UITableView = {
@@ -63,19 +51,24 @@ final class HomePageView: UIView {
         return tableView
     }()
     
-    init(viewModel: PackageListViewModel) {
-        super.init(frame: .zero)
+    init(viewModel: PackageListViewModel, sortFilterOptions: SortFilterOptions) {
         self.packageListViewModel = viewModel
+        self.sortFilterOptions = sortFilterOptions
+        super.init(frame: .zero)
         setup()
+        sort()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        subscriptionTypeFilterView.drawShadow(shadowData: ShadowData(cornerRadius: 0, shadowColor: .black, alpha: 0.2, offset: CGSize(width: 0, height: 5)))
+    @objc private func handleSortFilterButton() {
+        delegate?.didClickSortFilterOptionsButton()
+    }
+    
+    func sort() {
+        resultArray = packageListViewModel?.packageViewModels?.sortBy(sortFilterOptions: sortFilterOptions)
     }
 }
 
@@ -83,8 +76,6 @@ extension HomePageView {
     
     // MARK: Subview Setup
     private func setup() {
-        resultArray = packageListViewModel?.packageViewModels?.sortBy(sortOption: selectedSortOption, sortOrder: selectedSortOrder)
-        
         setupSubviews()
         setupConstraints()
         setupTableView()
@@ -93,9 +84,7 @@ extension HomePageView {
     
     private func setupSubviews() {
         addSubview(searchView)
-        addSubview(sortOrderView)
-        addSubview(tariffSortView)
-        addSubview(subscriptionTypeFilterView)
+        addSubview(sortFilterButton)
         addSubview(tableView)
     }
     
@@ -104,34 +93,17 @@ extension HomePageView {
                              leading: leadingAnchor,
                              bottom: nil,
                              trailing: trailingAnchor,
-                             paddingTop: 15, paddingleft: 0, paddingBottom: 0, paddingRight: 0,
+                             paddingTop: 15, paddingleft: 0, paddingBottom: 0, paddingRight: 50,
                              width: 0, height: 50, centerX: nil, centerY: nil)
         
-        let sectionHeight: CGFloat = 80
-
-        sortOrderView.anchor(top: searchView.bottomAnchor,
-                             leading: leadingAnchor,
-                             bottom: nil,
-                             trailing: trailingAnchor,
-                             paddingTop: 15, paddingleft: 0, paddingBottom: 0, paddingRight: 0,
-                             width: 0, height: sectionHeight, centerX: nil, centerY: nil)
+        sortFilterButton.anchor(top: nil,
+                                leading: nil,
+                                bottom: nil,
+                                trailing: trailingAnchor,
+                                paddingTop: 15, paddingleft: 0, paddingBottom: 0, paddingRight: 15,
+                                width: 30, height: 30, centerX: nil, centerY: searchView.centerYAnchor)
         
-        tariffSortView.anchor(top: sortOrderView.bottomAnchor,
-                              leading: leadingAnchor,
-                              bottom: nil,
-                              trailing: trailingAnchor,
-                              paddingTop: 10, paddingleft: 0, paddingBottom: 0, paddingRight: 0,
-                              width: 0, height: sectionHeight, centerX: nil, centerY: nil)
-        
-        
-        subscriptionTypeFilterView.anchor(top: tariffSortView.bottomAnchor,
-                                          leading: leadingAnchor,
-                                          bottom: nil,
-                                          trailing: trailingAnchor,
-                                          paddingTop: 10, paddingleft: 0, paddingBottom: 0, paddingRight: 0,
-                                          width: 0, height: sectionHeight, centerX: nil, centerY: nil)
-        
-        tableView.anchor(top: subscriptionTypeFilterView.bottomAnchor,
+        tableView.anchor(top: searchView.bottomAnchor,
                          leading: leadingAnchor,
                          bottom: bottomAnchor,
                          trailing: trailingAnchor,
@@ -158,56 +130,19 @@ extension HomePageView: UITableViewDataSource {
     }
 }
 
-extension HomePageView: SearchViewDelegate {
+extension HomePageView: SearchBarViewDelegate {
     
     func searchView(textDidChange searchText: String) {
         self.searchText = searchText
         if searchText.isEmpty == false && searchText.count > 2 {
-            resultArray = packageListViewModel?.packageViewModels?.sortBy(sortOption: selectedSortOption,
-                                                                          sortOrder: selectedSortOrder,
-                                                                          subscriptionFilterOption: selectedFilterOption,
+            resultArray = packageListViewModel?.packageViewModels?.sortBy(sortFilterOptions: sortFilterOptions,
                                                                           searchText: searchText)
         }
     }
     
     func searchTextFieldCleared() {
         searchText = ""
-        resultArray = packageListViewModel?.packageViewModels?.sortBy(sortOption: selectedSortOption,
-                                                                      sortOrder: selectedSortOrder,
-                                                                      subscriptionFilterOption: selectedFilterOption,
-                                                                      searchText: searchText)
-    }
-}
-
-extension HomePageView: SortOrderViewDelegate {
-    
-    func didSelect(_ sortOrder: SortOrder) {
-        selectedSortOrder = sortOrder
-        resultArray = packageListViewModel?.packageViewModels?.sortBy(sortOption: selectedSortOption,
-                                                                      sortOrder: selectedSortOrder,
-                                                                      subscriptionFilterOption: selectedFilterOption,
-                                                                      searchText: searchText)
-    }
-}
-
-extension HomePageView: TariffSortViewDelegate {
-    
-    func didSelect(_ sortOption: TariffSortOption) {
-        selectedSortOption = sortOption
-        resultArray = packageListViewModel?.packageViewModels?.sortBy(sortOption: selectedSortOption,
-                                                                      sortOrder: selectedSortOrder,
-                                                                      subscriptionFilterOption: selectedFilterOption,
-                                                                      searchText: searchText)
-    }
-}
-
-extension HomePageView: SubscriptionFilterViewDelegate {
-    
-    func didSelect(_ filterOption: SubscriptionFilterOption) {
-        selectedFilterOption = filterOption
-        resultArray = packageListViewModel?.packageViewModels?.sortBy(sortOption: selectedSortOption,
-                                                                      sortOrder: selectedSortOrder,
-                                                                      subscriptionFilterOption: filterOption,
+        resultArray = packageListViewModel?.packageViewModels?.sortBy(sortFilterOptions: sortFilterOptions,
                                                                       searchText: searchText)
     }
 }
@@ -215,9 +150,7 @@ extension HomePageView: SubscriptionFilterViewDelegate {
 extension HomePageView: PackageTableViewCellDelegate {
     
     func didClickFavouriteButton() {
-        resultArray = packageListViewModel?.packageViewModels?.sortBy(sortOption: selectedSortOption,
-                                                                      sortOrder: selectedSortOrder,
-                                                                      subscriptionFilterOption: selectedFilterOption,
+        resultArray = packageListViewModel?.packageViewModels?.sortBy(sortFilterOptions: sortFilterOptions,
                                                                       searchText: searchText)
     }
 }

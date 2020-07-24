@@ -39,7 +39,6 @@ final class TariffSortView: UIView {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
         collectionView.backgroundColor = .clear
         collectionView.showsHorizontalScrollIndicator = false
-        collectionView.bounces = false
         collectionView.isPagingEnabled = false
         collectionView.dataSource = self
         collectionView.delegate = self

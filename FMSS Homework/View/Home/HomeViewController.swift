@@ -6,11 +6,27 @@
 //  Copyright © 2020 Can Tekinalp. All rights reserved.
 //
 
-import UIKit
+import FittedSheets
 
 final class HomeViewController: UIViewController {
     
-    let homePageView = HomePageView(viewModel: PackageListViewModel(packages: loadJson() ?? nil))
+    let sortFilterOptions = SortFilterOptions()
+    lazy var packageListViewModel = PackageListViewModel(packages: loadJson() ?? nil)
+    
+    lazy var homePageView: HomePageView = {
+        let homePage = HomePageView(viewModel: packageListViewModel, sortFilterOptions: sortFilterOptions)
+        homePage.delegate = self
+        return homePage
+    }()
+    
+    lazy var sheetController = SheetViewController(controller: sortFilterOptionsViewController,
+                                                   sizes: [.halfScreen])
+
+    lazy var sortFilterOptionsViewController: SortFilterOptionsViewController = {
+        let sortFilterOptionsViewController = SortFilterOptionsViewController(sortFilterOptions: sortFilterOptions)
+        sortFilterOptionsViewController.delegate = self
+        return sortFilterOptionsViewController
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,5 +48,21 @@ extension HomeViewController {
     
     private func setupConstraints() {
         homePageView.fillSuperView()
+    }
+}
+
+extension HomeViewController: HomePageViewDelegate {
+    
+    func didClickSortFilterOptionsButton() {
+        self.present(sheetController, animated: false, completion: nil)
+    }
+}
+
+extension HomeViewController: SortFilterOptionsViewControllerDelegate {
+    
+    func didClickApplyFilterButton() {
+        sheetController.closeSheet { [weak self] in
+            self?.homePageView.sort()
+        }
     }
 }
