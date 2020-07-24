@@ -73,6 +73,10 @@ final class PackageViewModel {
         return "\(package.tariff.sms) SMS"
     }
     
+    var didUseBeforeText: String {
+        return package.didUseBefore ? "Daha önce kullanıldı" : ""
+    }
+    
     init(package: Package) {
         self.package = package
     }

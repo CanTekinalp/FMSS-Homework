@@ -28,6 +28,7 @@ final class PackageTableViewCell: UITableViewCell {
             priceLabel.text = packageViewModel?.price
             tariffView.packageViewModel = packageViewModel
             benefitsView.packageViewModel = packageViewModel
+            didUseBeforeLabel.text = packageViewModel?.didUseBeforeText
             refreshButton()
         }
     }
@@ -92,6 +93,14 @@ final class PackageTableViewCell: UITableViewCell {
     
     let benefitsView = PackageTableCellBenefitsView()
     
+    let didUseBeforeLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 1
+        label.textAlignment = .right
+        label.font = UIFont.systemFont(ofSize: 18, weight: .medium)
+        return label
+    }()
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setup()
@@ -140,6 +149,7 @@ extension PackageTableViewCell {
         containerView.addSubview(priceLabel)
         containerView.addSubview(benefitsView)
         containerView.addSubview(tariffView)
+        containerView.addSubview(didUseBeforeLabel)
         containerView.addSubview(favouriteButton)
     }
     
@@ -171,11 +181,18 @@ extension PackageTableViewCell {
                                 paddingTop: 15, paddingleft: horizontalPadding, paddingBottom: 0, paddingRight: horizontalPadding,
                                 width: 0, height: 0, centerX: nil, centerY: nil)
         
-        priceLabel.anchor(top: tariffView.topAnchor,
+        didUseBeforeLabel.anchor(top: descriptionLabel.bottomAnchor,
+                                 leading: containerView.leadingAnchor,
+                                 bottom: nil,
+                                 trailing: nil,
+                                 paddingTop: 10, paddingleft: horizontalPadding, paddingBottom: 0, paddingRight: 0,
+                                 width: 0, height: 0, centerX: nil, centerY: nil)
+        
+        priceLabel.anchor(top: didUseBeforeLabel.bottomAnchor,
                           leading: containerView.leadingAnchor,
                           bottom: nil,
                           trailing: nil,
-                          paddingTop: 0, paddingleft: horizontalPadding, paddingBottom: 0, paddingRight: 0,
+                          paddingTop: 10, paddingleft: horizontalPadding, paddingBottom: 0, paddingRight: 0,
                           width: 0, height: 0, centerX: nil, centerY: nil)
         
         benefitsView.anchor(top: priceLabel.bottomAnchor,
@@ -196,7 +213,7 @@ extension PackageTableViewCell {
                                leading: nil,
                                bottom: containerView.bottomAnchor,
                                trailing: nil,
-                               paddingTop: 30, paddingleft: 0, paddingBottom: 20, paddingRight: 0,
+                               paddingTop: 35, paddingleft: 0, paddingBottom: 20, paddingRight: 0,
                                width: 250, height: 44, centerX: containerView.centerXAnchor, centerY: nil)
     }
 }

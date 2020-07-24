@@ -9,7 +9,7 @@
 import Foundation
 
 final class SortFilterOptions {
-    var sortOrder: SortOrder = .ascending
-    var tariffSortOption: TariffSortOption = .data
+    var sortOrder: SortOrder = .descending
+    var tariffSortOption: TariffSortOption = .price
     var subscriptionFilterOption: SubscriptionFilterOption = .all
 }
