@@ -17,4 +17,8 @@ extension UIColor {
     static var cheese: UIColor {
         return UIColor(red: 251 / 255.0, green: 194 / 255.0, blue: 45 / 255.0, alpha: 1.0)
     }
+    
+    static var sortButtonColor: UIColor {
+        return UIColor(red: 142 / 255.0, green: 142 / 255.0, blue: 146 / 255.0, alpha: 1.0)
+    }
 }

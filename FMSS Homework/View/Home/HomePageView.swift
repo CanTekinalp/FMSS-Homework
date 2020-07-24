@@ -33,9 +33,11 @@ final class HomePageView: UIView {
         return searchView
     }()
     
-    lazy var sortFilterButton: UIButton = {
+    lazy var sortFilterMenuButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(named: "filterIcon"), for: .normal)
+        let image = UIImage(named: "filterIcon")?.withRenderingMode(.alwaysTemplate)
+        button.setImage(image, for: .normal)
+        button.tintColor = .sortButtonColor
         button.addTarget(self, action: #selector(handleSortFilterButton), for: .touchUpInside)
         button.backgroundColor = .clear
         return button
@@ -84,7 +86,7 @@ extension HomePageView {
     
     private func setupSubviews() {
         addSubview(searchView)
-        addSubview(sortFilterButton)
+        addSubview(sortFilterMenuButton)
         addSubview(tableView)
     }
     
@@ -96,12 +98,12 @@ extension HomePageView {
                              paddingTop: 15, paddingleft: 0, paddingBottom: 0, paddingRight: 50,
                              width: 0, height: 50, centerX: nil, centerY: nil)
         
-        sortFilterButton.anchor(top: nil,
+        sortFilterMenuButton.anchor(top: nil,
                                 leading: nil,
                                 bottom: nil,
                                 trailing: trailingAnchor,
                                 paddingTop: 15, paddingleft: 0, paddingBottom: 0, paddingRight: 15,
-                                width: 30, height: 30, centerX: nil, centerY: searchView.centerYAnchor)
+                                width: 40, height: 40, centerX: nil, centerY: searchView.centerYAnchor)
         
         tableView.anchor(top: searchView.bottomAnchor,
                          leading: leadingAnchor,
