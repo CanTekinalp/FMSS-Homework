@@ -21,6 +21,7 @@ final class HomePageView: UIView {
     private var selectedSortOrder: SortOrder = .descending
     private var selectedSortOption: TariffSortOption = .price
     private var selectedFilterOption: SubscriptionFilterOption = .all
+    private var searchText: String = ""
     
     lazy var searchView: SearchView = {
         let searchView = SearchView()
@@ -158,9 +159,23 @@ extension HomePageView: UITableViewDataSource {
 }
 
 extension HomePageView: SearchViewDelegate {
-
+    
     func searchView(textDidChange searchText: String) {
-        print(searchText)
+        self.searchText = searchText
+        if searchText.isEmpty == false && searchText.count > 2 {
+            resultArray = packageListViewModel?.packageViewModels?.sortBy(sortOption: selectedSortOption,
+                                                                          sortOrder: selectedSortOrder,
+                                                                          subscriptionFilterOption: selectedFilterOption,
+                                                                          searchText: searchText)
+        }
+    }
+    
+    func searchTextFieldCleared() {
+        searchText = ""
+        resultArray = packageListViewModel?.packageViewModels?.sortBy(sortOption: selectedSortOption,
+                                                                      sortOrder: selectedSortOrder,
+                                                                      subscriptionFilterOption: selectedFilterOption,
+                                                                      searchText: searchText)
     }
 }
 
@@ -168,7 +183,10 @@ extension HomePageView: SortOrderViewDelegate {
     
     func didSelect(_ sortOrder: SortOrder) {
         selectedSortOrder = sortOrder
-        resultArray = packageListViewModel?.packageViewModels?.sortBy(sortOption: selectedSortOption, sortOrder: selectedSortOrder, filterOption: selectedFilterOption)
+        resultArray = packageListViewModel?.packageViewModels?.sortBy(sortOption: selectedSortOption,
+                                                                      sortOrder: selectedSortOrder,
+                                                                      subscriptionFilterOption: selectedFilterOption,
+                                                                      searchText: searchText)
     }
 }
 
@@ -176,7 +194,10 @@ extension HomePageView: TariffSortViewDelegate {
     
     func didSelect(_ sortOption: TariffSortOption) {
         selectedSortOption = sortOption
-        resultArray = packageListViewModel?.packageViewModels?.sortBy(sortOption: selectedSortOption, sortOrder: selectedSortOrder, filterOption: selectedFilterOption)
+        resultArray = packageListViewModel?.packageViewModels?.sortBy(sortOption: selectedSortOption,
+                                                                      sortOrder: selectedSortOrder,
+                                                                      subscriptionFilterOption: selectedFilterOption,
+                                                                      searchText: searchText)
     }
 }
 
@@ -186,13 +207,17 @@ extension HomePageView: SubscriptionFilterViewDelegate {
         selectedFilterOption = filterOption
         resultArray = packageListViewModel?.packageViewModels?.sortBy(sortOption: selectedSortOption,
                                                                       sortOrder: selectedSortOrder,
-                                                                      filterOption: filterOption)
+                                                                      subscriptionFilterOption: filterOption,
+                                                                      searchText: searchText)
     }
 }
 
 extension HomePageView: PackageTableViewCellDelegate {
     
     func didClickFavouriteButton() {
-        resultArray = packageListViewModel?.packageViewModels?.sortBy(sortOption: selectedSortOption, sortOrder: selectedSortOrder, filterOption: selectedFilterOption)
+        resultArray = packageListViewModel?.packageViewModels?.sortBy(sortOption: selectedSortOption,
+                                                                      sortOrder: selectedSortOrder,
+                                                                      subscriptionFilterOption: selectedFilterOption,
+                                                                      searchText: searchText)
     }
 }

@@ -45,25 +45,33 @@ extension Array where Element == PackageViewModel {
         })
     }
     
-    private func filterBy(filterOption: SubscriptionFilterOption) -> Self? {
-        if case let SubscriptionFilterOption.subscriptionType(subscriptionType) = filterOption {
+    private func filterBy(subscriptionFilterOption: SubscriptionFilterOption) -> Self? {
+        if case let SubscriptionFilterOption.subscriptionType(subscriptionType) = subscriptionFilterOption {
             return filter { $0.package.subscriptionType == subscriptionType || $0.isFavourite }
         }
         return self
     }
     
-    func sortBy(sortOption: TariffSortOption, sortOrder: SortOrder, filterOption: SubscriptionFilterOption = .all) -> Self? {
-        let filtered = filterBy(filterOption: filterOption)
+    private func filterBy(searchText: String) -> Self? {
+        if searchText.isEmpty || searchText.count < 3 {
+            return self
+        }
+        return filter { $0.package.name.contains(searchText) }
+    }
+
+    func sortBy(sortOption: TariffSortOption, sortOrder: SortOrder, subscriptionFilterOption: SubscriptionFilterOption = .all, searchText: String = "") -> Self? {
+        let filteredBySubscription = filterBy(subscriptionFilterOption: subscriptionFilterOption)
+        let filteredBySearchText = filteredBySubscription?.filterBy(searchText: searchText)
 
         switch sortOption {
         case .price:
-            return filtered?.sortByPrice(sortOrder: sortOrder)
+            return filteredBySearchText?.sortByPrice(sortOrder: sortOrder)
         case .data:
-            return filtered?.sortByTariffData(sortOrder: sortOrder)
+            return filteredBySearchText?.sortByTariffData(sortOrder: sortOrder)
         case .talk:
-            return filtered?.sortByTariffTalk(sortOrder: sortOrder)
+            return filteredBySearchText?.sortByTariffTalk(sortOrder: sortOrder)
         case .sms:
-            return filtered?.sortByTariffSms(sortOrder: sortOrder)
+            return filteredBySearchText?.sortByTariffSms(sortOrder: sortOrder)
         }
     }
 }

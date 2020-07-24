@@ -10,12 +10,16 @@ import UIKit
 
 protocol SearchViewDelegate: NSObjectProtocol {
     func searchView(textDidChange searchText: String)
+    func searchTextFieldCleared()
 }
 
 final class SearchView: UIView {
             
     weak var delegate: SearchViewDelegate?
         
+    private var prevText: String = ""
+    private let searchElementThreshold: Int = 2
+    
     lazy var searchBar: UISearchBar = {
         let searchBar = UISearchBar(frame: .zero)
         searchBar.delegate = self
@@ -35,8 +39,7 @@ final class SearchView: UIView {
     
     @objc func handleDoneButton() {
         searchBar.resignFirstResponder()
-        guard let searchText = searchBar.searchTextField.text, searchText.isEmpty == false else { return }
-        delegate?.searchView(textDidChange: searchText)
+        delegate?.searchView(textDidChange: searchBar.searchTextField.text ?? "")
     }
 }
 
@@ -65,14 +68,18 @@ extension SearchView {
 extension SearchView: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if (prevText.count >  searchElementThreshold && searchText.isEmpty) ||
+            (prevText.count > searchElementThreshold && searchText.count < searchElementThreshold + 1)
+        {
+            delegate?.searchTextFieldCleared()
+            prevText = searchText
+            return
+        }
+        prevText = searchText
         delegate?.searchView(textDidChange: searchText)
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.searchTextField.resignFirstResponder()
-    }
-    
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        print("asds")
     }
 }
