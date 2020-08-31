@@ -7,19 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		14D30587224B46F7AD0099DB45B06A4D /* InitialTouchPanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CA57F1C243A9F156462A0B3BEB0E6F /* InitialTouchPanGestureRecognizer.swift */; };
-		59B922E5A045ABF00E56B3F8E613ED64 /* SheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366DD26FF819F7B29DB4B2B11AFF05B6 /* SheetViewController.swift */; };
-		5A20661433606CF4A270496CB9F75806 /* Pods-FMSS Homework-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 60DDCAE8EECF8F8D316B334C456F0719 /* Pods-FMSS Homework-dummy.m */; };
-		5DE24C2745DFD92315C55B6E29FCC04E /* FittedSheets-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CE2E98D99DEB8470E072B82BC9DDAC1 /* FittedSheets-dummy.m */; };
-		8A7A2EAA46236EF80F5C3BC9590F5C2A /* Yalta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C50E4D75D57EDC111CDEB3DDB872E25 /* Yalta.swift */; };
-		BD6C33F447E5BE2CFC42933095416DF6 /* FittedSheets-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F5EC267A78B48A72D504510552BC5169 /* FittedSheets-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		C0E77648C450868E91BDB391BC6EBBD4 /* SheetSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0A65437891374A90E1C1C48D074BAA /* SheetSize.swift */; };
-		DA1B25952C09040CCE98A2278A3F571F /* Pods-FMSS Homework-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C3E2D16038656D1D58695DA5B903635 /* Pods-FMSS Homework-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		FFA37DBA5927372C52E0FA10A8466701 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0377CAD4171DB6495043CFE7597C8A58 /* UIViewControllerExtension.swift */; };
+		14D30587224B46F7AD0099DB45B06A4D /* InitialTouchPanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321D97F8A2E4495F3EFB082971D92ED9 /* InitialTouchPanGestureRecognizer.swift */; };
+		59B922E5A045ABF00E56B3F8E613ED64 /* SheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE7A020D0E913EE5460B79B2D1F6B /* SheetViewController.swift */; };
+		5DE24C2745DFD92315C55B6E29FCC04E /* FittedSheets-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6025B4E4A2E1467F9D1E773947255F18 /* FittedSheets-dummy.m */; };
+		64196FA0B0C3FE09EC4D2E0B393EB375 /* Pods-FMSS Homework-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 60DDCAE8EECF8F8D316B334C456F0719 /* Pods-FMSS Homework-dummy.m */; };
+		8A7A2EAA46236EF80F5C3BC9590F5C2A /* Yalta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64716B04CF5420CE34D134234A543371 /* Yalta.swift */; };
+		BD6C33F447E5BE2CFC42933095416DF6 /* FittedSheets-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A4E6A11CA2C5C0C669477BEAB6D90E8 /* FittedSheets-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		C0E77648C450868E91BDB391BC6EBBD4 /* SheetSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56611090E751CCEAE57A3381B2EE8D9E /* SheetSize.swift */; };
+		E5F9C49A52D92C20D783D8C77E2D86E1 /* Pods-FMSS Homework-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C3E2D16038656D1D58695DA5B903635 /* Pods-FMSS Homework-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		FFA37DBA5927372C52E0FA10A8466701 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502E2FA10E010BB9B701A2CFB6E5DB30 /* UIViewControllerExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		F846988B89C0F211ECAA08F98771DB5C /* PBXContainerItemProxy */ = {
+		48F6DE1CF6D887A7967CDBA197F3B668 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -29,37 +29,38 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0377CAD4171DB6495043CFE7597C8A58 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIViewControllerExtension.swift; path = FittedSheetsPod/UIViewControllerExtension.swift; sourceTree = "<group>"; };
-		0C50E4D75D57EDC111CDEB3DDB872E25 /* Yalta.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Yalta.swift; path = FittedSheetsPod/Yalta.swift; sourceTree = "<group>"; };
+		04ADFFB1FCED9DA25BEA58DC0297576A /* FittedSheets.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = FittedSheets.modulemap; sourceTree = "<group>"; };
 		21AAE79511133937606E376EE52BED4F /* libFittedSheets.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libFittedSheets.a; path = libFittedSheets.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		21CEE7A020D0E913EE5460B79B2D1F6B /* SheetViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SheetViewController.swift; path = FittedSheetsPod/SheetViewController.swift; sourceTree = "<group>"; };
 		2C3E2D16038656D1D58695DA5B903635 /* Pods-FMSS Homework-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FMSS Homework-umbrella.h"; sourceTree = "<group>"; };
 		2F3CAB3265EE404E01F51FCEB5E8A453 /* Pods-FMSS Homework.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FMSS Homework.debug.xcconfig"; sourceTree = "<group>"; };
 		3165F119075A23F13606E1AD6AC40F1A /* Pods-FMSS Homework.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-FMSS Homework.modulemap"; sourceTree = "<group>"; };
-		366DD26FF819F7B29DB4B2B11AFF05B6 /* SheetViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SheetViewController.swift; path = FittedSheetsPod/SheetViewController.swift; sourceTree = "<group>"; };
-		3CE2E98D99DEB8470E072B82BC9DDAC1 /* FittedSheets-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FittedSheets-dummy.m"; sourceTree = "<group>"; };
-		48FB161BEC5F7CFAE884EB79026CD718 /* FittedSheets-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FittedSheets-prefix.pch"; sourceTree = "<group>"; };
-		5290EDD6EAFB9246A2EE4DFEA5F37147 /* FittedSheets.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = FittedSheets.modulemap; sourceTree = "<group>"; };
-		577AF2AC310793AF75CC26E1FEBA0E91 /* FittedSheets.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FittedSheets.xcconfig; sourceTree = "<group>"; };
-		5E0A65437891374A90E1C1C48D074BAA /* SheetSize.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SheetSize.swift; path = FittedSheetsPod/SheetSize.swift; sourceTree = "<group>"; };
+		321D97F8A2E4495F3EFB082971D92ED9 /* InitialTouchPanGestureRecognizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InitialTouchPanGestureRecognizer.swift; path = FittedSheetsPod/InitialTouchPanGestureRecognizer.swift; sourceTree = "<group>"; };
+		502E2FA10E010BB9B701A2CFB6E5DB30 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIViewControllerExtension.swift; path = FittedSheetsPod/UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		56611090E751CCEAE57A3381B2EE8D9E /* SheetSize.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SheetSize.swift; path = FittedSheetsPod/SheetSize.swift; sourceTree = "<group>"; };
+		6025B4E4A2E1467F9D1E773947255F18 /* FittedSheets-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FittedSheets-dummy.m"; sourceTree = "<group>"; };
 		60DDCAE8EECF8F8D316B334C456F0719 /* Pods-FMSS Homework-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FMSS Homework-dummy.m"; sourceTree = "<group>"; };
+		64716B04CF5420CE34D134234A543371 /* Yalta.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Yalta.swift; path = FittedSheetsPod/Yalta.swift; sourceTree = "<group>"; };
+		6A4E6A11CA2C5C0C669477BEAB6D90E8 /* FittedSheets-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FittedSheets-umbrella.h"; sourceTree = "<group>"; };
 		74AF87A26ED83965CA7B6B4F86755A40 /* Pods-FMSS Homework-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FMSS Homework-acknowledgements.markdown"; sourceTree = "<group>"; };
-		85CA57F1C243A9F156462A0B3BEB0E6F /* InitialTouchPanGestureRecognizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InitialTouchPanGestureRecognizer.swift; path = FittedSheetsPod/InitialTouchPanGestureRecognizer.swift; sourceTree = "<group>"; };
+		837A2BAFB571E8FAF704E5739EC7BF07 /* FittedSheets.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FittedSheets.debug.xcconfig; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9DF9AF07942603EE16601D32E72CC46D /* FittedSheets.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FittedSheets.release.xcconfig; sourceTree = "<group>"; };
+		A66DAFE628E6BA74FC3C1762E5B215D4 /* FittedSheets-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FittedSheets-prefix.pch"; sourceTree = "<group>"; };
 		BF2B5E1A0304A40A50FF34173D4EEE51 /* libPods-FMSS Homework.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-FMSS Homework.a"; path = "libPods-FMSS Homework.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE381A13A2F9A7ECEDDC638AAFA3EA6D /* Pods-FMSS Homework-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FMSS Homework-acknowledgements.plist"; sourceTree = "<group>"; };
 		F06A77559A4AD3F9B1E82479A85FEAB6 /* Pods-FMSS Homework.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FMSS Homework.release.xcconfig"; sourceTree = "<group>"; };
-		F5EC267A78B48A72D504510552BC5169 /* FittedSheets-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FittedSheets-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		350C5EF34A56531D4165AB00CF72177E /* Frameworks */ = {
+		45D567FCA54248959A3B0DF200AF47D5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		45D567FCA54248959A3B0DF200AF47D5 /* Frameworks */ = {
+		8AF234F81D00A658D47C2F46BCDC9307 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -69,26 +70,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		06A1BAC5B8349B97BA08AE7037A876B3 /* FittedSheets */ = {
+		124965EE3CEB77853A1A5AC1B1A2F993 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				85CA57F1C243A9F156462A0B3BEB0E6F /* InitialTouchPanGestureRecognizer.swift */,
-				5E0A65437891374A90E1C1C48D074BAA /* SheetSize.swift */,
-				366DD26FF819F7B29DB4B2B11AFF05B6 /* SheetViewController.swift */,
-				0377CAD4171DB6495043CFE7597C8A58 /* UIViewControllerExtension.swift */,
-				0C50E4D75D57EDC111CDEB3DDB872E25 /* Yalta.swift */,
-				6C5038EE27F85F7A41D104832FF4E9CD /* Support Files */,
+				167284E10AEB5F76B0AA53E62668BF8C /* FittedSheets */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		167284E10AEB5F76B0AA53E62668BF8C /* FittedSheets */ = {
+			isa = PBXGroup;
+			children = (
+				321D97F8A2E4495F3EFB082971D92ED9 /* InitialTouchPanGestureRecognizer.swift */,
+				56611090E751CCEAE57A3381B2EE8D9E /* SheetSize.swift */,
+				21CEE7A020D0E913EE5460B79B2D1F6B /* SheetViewController.swift */,
+				502E2FA10E010BB9B701A2CFB6E5DB30 /* UIViewControllerExtension.swift */,
+				64716B04CF5420CE34D134234A543371 /* Yalta.swift */,
+				307E391636913B31CA3B1D53F490B542 /* Support Files */,
 			);
 			name = FittedSheets;
 			path = FittedSheets;
 			sourceTree = "<group>";
 		};
-		124965EE3CEB77853A1A5AC1B1A2F993 /* Pods */ = {
+		307E391636913B31CA3B1D53F490B542 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				06A1BAC5B8349B97BA08AE7037A876B3 /* FittedSheets */,
+				04ADFFB1FCED9DA25BEA58DC0297576A /* FittedSheets.modulemap */,
+				6025B4E4A2E1467F9D1E773947255F18 /* FittedSheets-dummy.m */,
+				A66DAFE628E6BA74FC3C1762E5B215D4 /* FittedSheets-prefix.pch */,
+				6A4E6A11CA2C5C0C669477BEAB6D90E8 /* FittedSheets-umbrella.h */,
+				837A2BAFB571E8FAF704E5739EC7BF07 /* FittedSheets.debug.xcconfig */,
+				9DF9AF07942603EE16601D32E72CC46D /* FittedSheets.release.xcconfig */,
 			);
-			name = Pods;
+			name = "Support Files";
+			path = "../Target Support Files/FittedSheets";
 			sourceTree = "<group>";
 		};
 		43E8DA3FFC50654C92AA21E60E2A19FE /* Pods-FMSS Homework */ = {
@@ -104,19 +119,6 @@
 			);
 			name = "Pods-FMSS Homework";
 			path = "Target Support Files/Pods-FMSS Homework";
-			sourceTree = "<group>";
-		};
-		6C5038EE27F85F7A41D104832FF4E9CD /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				5290EDD6EAFB9246A2EE4DFEA5F37147 /* FittedSheets.modulemap */,
-				577AF2AC310793AF75CC26E1FEBA0E91 /* FittedSheets.xcconfig */,
-				3CE2E98D99DEB8470E072B82BC9DDAC1 /* FittedSheets-dummy.m */,
-				48FB161BEC5F7CFAE884EB79026CD718 /* FittedSheets-prefix.pch */,
-				F5EC267A78B48A72D504510552BC5169 /* FittedSheets-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/FittedSheets";
 			sourceTree = "<group>";
 		};
 		7CC1105EF03B1CA530D7A467BE04FC7C /* Targets Support Files */ = {
@@ -157,14 +159,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		1764B976963495C99D0A79D42992D637 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DA1B25952C09040CCE98A2278A3F571F /* Pods-FMSS Homework-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		A5DFEE3DE5E665492CBE7DAC57F288BF /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -173,21 +167,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ACCAE8D9EAFD6A29FF219D1AF7C33A1A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5F9C49A52D92C20D783D8C77E2D86E1 /* Pods-FMSS Homework-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		9C575D6A06218BE460FA8DB80DCDD9C5 /* Pods-FMSS Homework */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0D5B112093EE51FB81B157379DAD86AA /* Build configuration list for PBXNativeTarget "Pods-FMSS Homework" */;
+			buildConfigurationList = E7E2C5210F45340650427EAC07B199FB /* Build configuration list for PBXNativeTarget "Pods-FMSS Homework" */;
 			buildPhases = (
-				1764B976963495C99D0A79D42992D637 /* Headers */,
-				C3A4413759E5604A5A05F139D14BA110 /* Sources */,
-				350C5EF34A56531D4165AB00CF72177E /* Frameworks */,
+				ACCAE8D9EAFD6A29FF219D1AF7C33A1A /* Headers */,
+				21EF6C229FBFD182AD9C9D83F4BBB22B /* Sources */,
+				8AF234F81D00A658D47C2F46BCDC9307 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				23F32128527C3401FC311DFC99E0A5B8 /* PBXTargetDependency */,
+				0D3B6183A37F46C7782087A5F61E4506 /* PBXTargetDependency */,
 			);
 			name = "Pods-FMSS Homework";
 			productName = "Pods-FMSS Homework";
@@ -268,6 +270,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		21EF6C229FBFD182AD9C9D83F4BBB22B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64196FA0B0C3FE09EC4D2E0B393EB375 /* Pods-FMSS Homework-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A598E309F83217C6F28ACA639D957040 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -281,27 +291,45 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C3A4413759E5604A5A05F139D14BA110 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5A20661433606CF4A270496CB9F75806 /* Pods-FMSS Homework-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		23F32128527C3401FC311DFC99E0A5B8 /* PBXTargetDependency */ = {
+		0D3B6183A37F46C7782087A5F61E4506 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = FittedSheets;
 			target = B71C614CBF9B1B690FE941C4DF44D040 /* FittedSheets */;
-			targetProxy = F846988B89C0F211ECAA08F98771DB5C /* PBXContainerItemProxy */;
+			targetProxy = 48F6DE1CF6D887A7967CDBA197F3B668 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		493905F30794B088AA27353D8206425D /* Release */ = {
+		34EAC1483A8C2EA3DE43BCA029B24745 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DF9AF07942603EE16601D32E72CC46D /* FittedSheets.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/FittedSheets/FittedSheets-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MODULEMAP_FILE = Headers/Public/FittedSheets/FittedSheets.modulemap;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = FittedSheets;
+				PRODUCT_NAME = FittedSheets;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		441D6A9B5A5EE3F602DBD2DFCEABC460 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F06A77559A4AD3F9B1E82479A85FEAB6 /* Pods-FMSS Homework.release.xcconfig */;
 			buildSettings = {
@@ -324,57 +352,6 @@
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
-		};
-		54F0D06D2306CC5A6884B7E1DF7970B5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 577AF2AC310793AF75CC26E1FEBA0E91 /* FittedSheets.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/FittedSheets/FittedSheets-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MODULEMAP_FILE = Headers/Public/FittedSheets/FittedSheets.modulemap;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = FittedSheets;
-				PRODUCT_NAME = FittedSheets;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		6272595F3A2AF583656E4379BDA27BF0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 577AF2AC310793AF75CC26E1FEBA0E91 /* FittedSheets.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/FittedSheets/FittedSheets-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MODULEMAP_FILE = Headers/Public/FittedSheets/FittedSheets.modulemap;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = FittedSheets;
-				PRODUCT_NAME = FittedSheets;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
 		};
 		939F1A8F6BCEB7F9F64D9EEE50CAE014 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -440,7 +417,32 @@
 			};
 			name = Debug;
 		};
-		9F03042391665207C3140C2FDC8C8072 /* Debug */ = {
+		AC956BF48DB6D8F8FDDE5D1308F42820 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 837A2BAFB571E8FAF704E5739EC7BF07 /* FittedSheets.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/FittedSheets/FittedSheets-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MODULEMAP_FILE = Headers/Public/FittedSheets/FittedSheets.modulemap;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = FittedSheets;
+				PRODUCT_NAME = FittedSheets;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D94F9C02F38022E816E96AA2277DA3C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2F3CAB3265EE404E01F51FCEB5E8A453 /* Pods-FMSS Homework.debug.xcconfig */;
 			buildSettings = {
@@ -526,15 +528,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0D5B112093EE51FB81B157379DAD86AA /* Build configuration list for PBXNativeTarget "Pods-FMSS Homework" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9F03042391665207C3140C2FDC8C8072 /* Debug */,
-				493905F30794B088AA27353D8206425D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -547,8 +540,17 @@
 		DAB51F62CC272F1844C6F729AFE4C8FE /* Build configuration list for PBXNativeTarget "FittedSheets" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6272595F3A2AF583656E4379BDA27BF0 /* Debug */,
-				54F0D06D2306CC5A6884B7E1DF7970B5 /* Release */,
+				AC956BF48DB6D8F8FDDE5D1308F42820 /* Debug */,
+				34EAC1483A8C2EA3DE43BCA029B24745 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E7E2C5210F45340650427EAC07B199FB /* Build configuration list for PBXNativeTarget "Pods-FMSS Homework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D94F9C02F38022E816E96AA2277DA3C3 /* Debug */,
+				441D6A9B5A5EE3F602DBD2DFCEABC460 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -10,6 +10,7 @@ import FittedSheets
 
 final class HomeViewController: UIViewController {
     
+    let sheetHeight: CGFloat = UIScreen.main.bounds.height * 0.7
     let sortFilterOptions = SortFilterOptions()
     lazy var packageListViewModel = PackageListViewModel(packages: loadJson() ?? nil)
     
@@ -20,7 +21,7 @@ final class HomeViewController: UIViewController {
     }()
     
     lazy var sheetController = SheetViewController(controller: sortFilterOptionsViewController,
-                                                   sizes: [.halfScreen])
+                                                   sizes: [.fixed(sheetHeight)])
 
     lazy var sortFilterOptionsViewController: SortFilterOptionsViewController = {
         let sortFilterOptionsViewController = SortFilterOptionsViewController(sortFilterOptions: sortFilterOptions)
