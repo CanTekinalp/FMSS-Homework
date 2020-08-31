@@ -42,8 +42,8 @@ final class PackageTableCellBenefitsView: UIView {
         
         packageViewModel?.benefits?.forEach {
             let imageView = UIImageView(image: $0)
-            imageView.setWidthAnchor(to: 30)
-            imageView.setHeightAnchor(to: 30)
+            imageView.setWidthAnchor(to: 25)
+            imageView.setHeightAnchor(to: 25)
             stackView.addArrangedSubview(imageView)
         }
     }
